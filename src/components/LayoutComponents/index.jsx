@@ -12,7 +12,7 @@ export const LayoutComponents = (props) => {
                     <span><img src={vdcIMG} alt="Vem de Carona"/></span>
                 </div>
           
-                <div className='left-side'>
+                <div className='right-side'>
                     <nav>
                         <ul class="nav">
                             <li id="login"><Link to="/login">Login</Link></li>

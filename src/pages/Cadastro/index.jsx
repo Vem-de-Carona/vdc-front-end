@@ -19,7 +19,7 @@ export const Cadastro = () => {
                 <div className="wrap-input">
                     <input
                         className={nome !== "" ? 'has-val input' : 'input'}
-                        type="nome"
+                        type="text"
                         value={nome}
                         onChange={e => setNome(e.target.value)}
                     />
@@ -29,7 +29,7 @@ export const Cadastro = () => {
                 <div className="wrap-input">
                     <input
                         className={sobrenome !== "" ? 'has-val input' : 'input'}
-                        type="sobrenome"
+                        type="text"
                         value={sobrenome}
                         onChange={e => setSobrenome(e.target.value)}
                     />
@@ -54,7 +54,7 @@ export const Cadastro = () => {
                 <div className="wrap-input">
                     <input
                         className={telefone !== "" ? 'has-val input' : 'input'}
-                        type="telefone"
+                        type="tel"
                         value={telefone}
                         onChange={e => setTelefone(e.target.value)}
                     />
@@ -63,8 +63,10 @@ export const Cadastro = () => {
 
                 <div className="wrap-input">
                     <input
-                        className={telefone !== "" ? 'has-val input' : 'input'}
-                        type="cpf"
+                        className={cpf !== "" ? 'has-val input' : 'input'}
+                        type="text"
+                        maxLength={11}
+                        minLength={11}
                         value={cpf}
                         onChange={e => setCPF(e.target.value)}
                     />
@@ -96,7 +98,7 @@ export const Cadastro = () => {
                     <option value="valor2">Sou passageiro</option>
                 </select>
 
-                <form action="/cadastro-endereco">
+                <form action="/cadastro-">
                     <input className='cadastro-form-btn' type="submit" value="Continuar"/>
                 </form>
 
