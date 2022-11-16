@@ -2,7 +2,7 @@ import { LayoutSemLoginCadastro } from "../../components/LayoutSemLoginCadastro"
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-export const Cadastro_Carro = () => {
+export const CadastroCarro = () => {
     const [cnh, setCNH] = useState("")
     const [marca, setMarca] = useState("")
     const [modelo, setModelo] = useState("")
