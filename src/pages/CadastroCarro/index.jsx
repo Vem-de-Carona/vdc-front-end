@@ -79,7 +79,7 @@ export const CadastroCarro = () => {
                     <option value="4">4</option>
                 </select>
 
-                <form action="/cadastro-endereco">
+                <form action="/cadastro_endereco">
                     <input className='cadastro-form-btn' type="submit" value="Continuar"/>
                 </form>
 

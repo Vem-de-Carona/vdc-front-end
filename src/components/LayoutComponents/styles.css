@@ -19,6 +19,7 @@
 .header{
     height: 80px;
     display: flex;
+    justify-content:space-between;
     background-color: #0756d5;
 }
 
@@ -38,6 +39,10 @@ ul.nav li {
     display: inline;
     font-size: 100%;
     font: inherit;
+}
+
+.right-side{
+    margin-right: 20px;
 }
 
 #login  a{
