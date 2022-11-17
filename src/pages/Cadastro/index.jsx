@@ -99,7 +99,31 @@ export const Cadastro = () => {
                 </select>
 
                 <form action="/cadastro-">
-                    <input className='cadastro-form-btn' type="submit" value="Continuar"/>
+                    <input className='cadastro-form-btn' type="submit" value="Continuar"
+                    onClick = {
+                        async e => {
+                            e.preventDefault();
+                            const resp = await fetch("/signUp/passenger", {
+                                method: "POST",
+                                body: JSON.stringify({
+                                    name: nome,
+                                    surname: sobrenome,
+                                    // TODO: Passar a data de nascimento como uma String
+                                    //  no seguinte formato: DIA/MÊS/ANO.
+                                    birthDate: "",
+                                    email: email,
+                                    phone: telefone,
+                                    cpf: cpf,
+                                    password: password
+                                }),
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                // TODO: Realizar tratamentos com base na resposta
+                                //  do back-end (utilizar a const resp).
+                            });
+                        }
+                    }/>
                 </form>
 
                 <div className='text-entrar-conta'>
