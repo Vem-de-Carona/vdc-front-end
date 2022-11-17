@@ -108,9 +108,7 @@ export const Cadastro = () => {
                                 body: JSON.stringify({
                                     name: nome,
                                     surname: sobrenome,
-                                    // TODO: Passar a data de nascimento como uma String
-                                    //  no seguinte formato: DIA/MÊS/ANO.
-                                    birthDate: "",
+                                    age: "",
                                     email: email,
                                     phone: telefone,
                                     cpf: cpf,
@@ -119,8 +117,6 @@ export const Cadastro = () => {
                                 headers: {
                                     'Content-Type': 'application/json',
                                 },
-                                // TODO: Realizar tratamentos com base na resposta
-                                //  do back-end (utilizar a const resp).
                             });
                         }
                     }/>
