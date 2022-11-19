@@ -14,7 +14,7 @@ export const Cadastro = () => {
         <LayoutComponents>
             <form className="conteudo-principal-escrito">
 
-                <span className="conteudo-principal-escrito-subtitulo flex"> Insira suas inforçaões para se cadastrar:</span>
+                <h1 className="conteudo-principal-escrito-subtitulo flex"> Insira suas inforçaões para se cadastrar:</h1>
 
                 <div className="flex">
                     <input
@@ -89,7 +89,7 @@ export const Cadastro = () => {
                 </div>            
                 
                 <div className="flex">  
-                    <form action="/cadastro-">
+                    <form action="/telapassageiro">
                         <input className='login-form-btn' type="submit" value="Continuar"/>
                     </form>
                 </div>               
