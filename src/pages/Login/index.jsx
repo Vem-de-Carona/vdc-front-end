@@ -8,40 +8,44 @@ export const Login = () => {
   const [password, setPassword] = useState("")
   return (
     <LayoutComponents>
+      <form className="conteudo-principal-escrito">
 
-      <form className="login-form">
+        <span className="conteudo-principal-escrito-titulo flex"> Bem Vindo!</span>
+        <span className="conteudo-principal-escrito-subtitulo flex"> Faça seu Login:</span>
 
-        <span className="login-title"> Bem Vindo!</span>
-        <span className="login-infos"> Faça seu Login:</span>
-
-        <div className="wrap-input">
-          <input
+        <div className="flex">
+          <input 
+            placeholder="E-mail"
             className={email !== "" ? 'has-val input' : 'input'}
             type="email"
             value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
-          <span className="focus-input" data-placeholder="E-mail"></span>
+            onChange={e => setEmail(e.target.value)}/>
         </div>
 
-        <div className="wrap-input">
+        <div className="flex">
           <input
+            placeholder="Senha"
             className={password !== "" ? 'has-val input' : 'input'}
             type="password"
             value={password}
-            onChange={e => setPassword(e.target.value)}
-          />
-          <span className="focus-input" data-placeholder="Senha"></span>
+            onChange={e => setPassword(e.target.value)}/>
         </div>
 
-        <form action="/#">
-          <input className='login-form-btn' type="submit" value="Entrar"/>
-        </form>
-
-        <div className='text-criar-conta'>
-          <span className='txt1'>Não possui conta? </span>
-          <Link className='txt2' to='/cadastro'> Criar conta.</Link>
+        <div className="flex">
+          <form action="/passageiro">
+            <input className='login-form-btn' type="submit" value="Entrar"/>
+          </form>
         </div>
+
+        <div className="flex">
+          <span className="criar-conta">Não possui conta? </span>
+          <Link className="criar-conta-cadastro" to='/cadastro'> Criar conta.</Link>
+        </div>
+
+        <footer className="rodape">
+          <p className="rodape-escrito">Developed by</p>
+          <p className="rodape-escrito-nome">Augusto Lima, Emanoel Santos, Gustavo Alves, Marcos Vinicius</p>     
+        </footer>
 
       </form>
     </LayoutComponents>

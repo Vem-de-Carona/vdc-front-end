@@ -11,12 +11,12 @@ export const PaginaInicial = () => {
                     <div className="conteudo-principal-escrito">
                         <h1 className="conteudo-principal-escrito-titulo">Vem de Carona</h1>
                         <h2 className="conteudo-principal-escrito-subtitulo">Venha pegar carona com colegas universitários</h2>
-                        <button className="conteudo-principal-escrito-botao-borda">
-                            <Link to="/cadastro"className="conteudo-principal-escrito-botao-escrito">Cadastro</Link>
-                        </button>                  
+                        
+                            <Link to="/login"className="conteudo-principal-escrito-botao">Login</Link>
+                                         
                     </div>
 
-                    <span><img src={carro} alt="Carro do Vem de Carona" width='360px'/></span>
+                    <span><img src={carro} alt="Carro do Vem de Carona" width='400px'/></span>
                 </section>
 
                 <section className="conteudo-secundario">
