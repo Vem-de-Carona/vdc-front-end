@@ -10,6 +10,7 @@ export const Cadastro = () => {
     const [cpf, setCPF] = useState("")
     const [password, setPassword] = useState("")
     const [passworddnv, setPasswordNovamente] = useState("")
+    const [dataNascimento, setDataNascimento] = useState("")
     return (
         <LayoutComponents>
             <form className="cadastro-form">
@@ -38,7 +39,10 @@ export const Cadastro = () => {
 
                 <div className="dataNascimento">
                     <span> Data de nascimento: </span>
-                    <input className="nascimento" type="date" />
+                    <input className="nascimento" type="date"
+                    value = {dataNascimento}
+                    onChange = {e => setDataNascimento(e.target.value)}
+                    />
                 </div>
 
                 <div className="wrap-input">
@@ -106,12 +110,12 @@ export const Cadastro = () => {
                             const resp = await fetch("/signUp/passenger", {
                                 method: "POST",
                                 body: JSON.stringify({
+                                    cpf: cpf,
                                     name: nome,
                                     surname: sobrenome,
-                                    age: "",
+                                    birthDate: dataNascimento,
                                     email: email,
                                     phone: telefone,
-                                    cpf: cpf,
                                     password: password
                                 }),
                                 headers: {
