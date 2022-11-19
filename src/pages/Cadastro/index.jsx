@@ -89,7 +89,7 @@ export const Cadastro = () => {
                 </div>            
                 
                 <div className="flex">  
-                    <form action="/cadastro-">
+                    <form action="/login">
                         <input className='login-form-btn' type="submit" value="Continuar"/>
                     </form>
                 </div>               

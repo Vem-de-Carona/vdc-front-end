@@ -1,7 +1,7 @@
 import { LayoutSemLoginCadastro } from '../../components/LayoutSemLoginCadastro';
 import usuario from '../../assets/usuario.png';
 
-export const Passageiro = () => {
+export const TelaUsuario = () => {
   return (
     <LayoutSemLoginCadastro>
 
