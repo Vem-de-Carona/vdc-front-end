@@ -15,7 +15,7 @@ export const Cadastro = () => {
         <LayoutComponents>
             <form className="cadastro-form">
 
-                <span className="cadastro-title"> Insira suas inforçaões para se cadastrar:</span>
+                <span className="cadastro-title"> Insira suas informações para se cadastrar: </span>
 
                 <div className="wrap-input">
                     <input
