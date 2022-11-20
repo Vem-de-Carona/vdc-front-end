@@ -4,37 +4,44 @@ import usuario from '../../assets/usuario.png';
 export const TelaMotorista = () => {
   return (
     <LayoutSemLoginCadastro>
-
-        <div className='conteudo-principal-escrito-subtitulo'>Área Motorista</div>   
-
-        <div className='container-passageiro'>
-            <div className='center-passageiro'>
-
-                <div className='match-passageiro'>
-
-                    <ul>
-                        <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="139px"/></span></li>
-                        <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="139px"/></span></li>
-                        <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="139px"/></span></li>
-                        <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="139px"/></span></li>
-                        <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="139px"/></span></li>
-                        <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="139px"/></span></li>
-                        <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="139px"/></span></li>
-                        <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="139px"/></span></li>
-                    </ul>
-                </div>
-
-                <div className='center_button-passageiro'>
-                    <form action="/passageiro">
-                        <input className='login-form-btn' type="submit" value="Pesquisar"/>
-                    </form>
-                    <form action="/chat">
-                        <input className='login-form-btn' type="submit" value="Chats"/>
-                    </form>
+        <form className="conteudo-principal-escrito">
+            <div className='conteudo-principal-escrito-titulo flex'>Área Motorista</div>   
+            <div className='conteudo-principal-escrito-subtitulo flex'>Escolha um passageiro para realizar a viagem</div>   
+            <div className='container-passageiro'>
+                <div className='center-passageiro'>
+                    <div className='match-passageiro'>
+                        <ul>
+                            <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="160px"/></span></li>
+                            <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="160px"/></span></li>
+                            <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="160px"/></span></li>
+                        </ul>
+                        <ul>
+                            <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="160px"/></span></li>
+                            <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="160px"/></span></li>
+                            <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="160px"/></span></li>
+                        </ul>
+                        <ul>
+                            <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="160px"/></span></li>
+                            <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="160px"/></span></li>
+                            <li className='match-li-passageiro'><span><img src={usuario} alt="usuario" height="160px"/></span></li>
+                        </ul>         
+                    </div>
                 </div>
             </div>
-        </div>
+            <div className='flex'>
+                <form action="/passageiro">
+                    <input className='login-form-btn' type="submit" value="Pesquisar"/>
+                </form>
+                <form action="/chat">
+                    <input className='login-form-btn' type="submit" value="Chats"/>
+                </form>
+            </div>
 
+            <footer className="rodape">
+                <p className="rodape-escrito">Developed by</p>
+                <p className="rodape-escrito-nome">Augusto Lima, Emanoel Santos, Gustavo Alves, Marcos Vinicius</p>     
+            </footer>
+        </form>
     </LayoutSemLoginCadastro>
   );
 }
