@@ -10,6 +10,7 @@ export const Cadastro = () => {
     const [cpf, setCPF] = useState("")
     const [password, setPassword] = useState("")
     const [passworddnv, setPasswordNovamente] = useState("")
+    const [dataNascimento, setDataNascimento] = useState("")
     return (
         <LayoutComponents>
             <form className="cadastro-form">
@@ -38,7 +39,10 @@ export const Cadastro = () => {
 
                 <div className="dataNascimento">
                     <span> Data de nascimento: </span>
-                    <input className="nascimento" type="date" />
+                    <input className="nascimento" type="date"
+                    value = {dataNascimento}
+                    onChange = {e => setDataNascimento(e.target.value)}
+                    />
                 </div>
 
                 <div className="wrap-input">
@@ -99,7 +103,27 @@ export const Cadastro = () => {
                 </select>
 
                 <form action="/cadastro-">
-                    <input className='cadastro-form-btn' type="submit" value="Continuar"/>
+                    <input className='cadastro-form-btn' type="submit" value="Continuar"
+                    onClick = {
+                        async e => {
+                            e.preventDefault();
+                            const resp = await fetch("/signUp/passenger", {
+                                method: "POST",
+                                body: JSON.stringify({
+                                    cpf: cpf,
+                                    name: nome,
+                                    surname: sobrenome,
+                                    birthDate: dataNascimento,
+                                    email: email,
+                                    phone: telefone,
+                                    password: password
+                                }),
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                            });
+                        }
+                    }/>
                 </form>
 
                 <div className='text-entrar-conta'>
