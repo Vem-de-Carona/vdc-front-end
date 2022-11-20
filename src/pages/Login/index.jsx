@@ -32,7 +32,7 @@ export const Login = () => {
         </div>
 
         <div className="flex">
-          <form action="/passageiro">
+          <form action="/tela_usuario">
             <input className='login-form-btn' type="submit" value="Entrar"/>
           </form>
         </div>

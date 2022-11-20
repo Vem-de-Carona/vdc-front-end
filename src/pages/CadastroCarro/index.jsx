@@ -11,82 +11,85 @@ export const CadastroCarro = () => {
 
     return(
         <LayoutSemLoginCadastro>
+            <form className="conteudo-principal-escrito">
 
-            <form className="cadastro-form">
+                <span className="conteudo-principal-escrito-subtitulo flex"> Insira sua CNH e os dados do carro:</span>
 
-                <span className="cadastro-title"> Insira sua CNH e os dados do carro:</span>
-
-                <div className="wrap-input">
+                <div className="flex">
                 <input
-                        className={cnh !== "" ? 'has-val input' : 'input'}
-                        type="text"
-                        maxLength={11}
-                        minLength={11}
-                        value={cnh}
-                        onChange={e => setCNH(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="CNH"></span>
+                    placeholder="CNH"
+                    className={cnh !== "" ? 'has-val input' : 'input'}
+                    type="text"
+                    maxLength={11}
+                    minLength={11}
+                    value={cnh}
+                    onChange={e => setCNH(e.target.value)}/>
                 </div>
 
-                <div className="wrap-input">
+                <div className="flex">
                 <input
-                        className={marca !== "" ? 'has-val input' : 'input'}
-                        type="text"
-                        value={marca}
-                        onChange={e => setMarca(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Marca"></span>
+                    placeholder="Marca"
+                    className={marca !== "" ? 'has-val input' : 'input'}
+                    type="text"
+                    value={marca}
+                    onChange={e => setMarca(e.target.value)}/>
                 </div>
 
-                <div className="wrap-input">
+                <div className="flex">
                 <input
-                        className={modelo !== "" ? 'has-val input' : 'input'}
-                        type="text"
-                        value={modelo}
-                        onChange={e => setModelo(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Modelo"></span>
+                    placeholder="Modelo"
+                    className={modelo !== "" ? 'has-val input' : 'input'}
+                    type="text"
+                    value={modelo}
+                    onChange={e => setModelo(e.target.value)}/>
                 </div>
 
-                <div className="wrap-input">
+                <div className="flex">
                 <input
-                        className={ano !== "" ? 'has-val input' : 'input'}
-                        type="text"
-                        maxLength={4}
-                        minLength={4}
-                        value={ano}
-                        onChange={e => setAno(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Ano"></span>
+                    placeholder="Ano"
+                    className={ano !== "" ? 'has-val input' : 'input'}
+                    type="text"
+                    maxLength={4}
+                    minLength={4}
+                    value={ano}
+                    onChange={e => setAno(e.target.value)}/>
                 </div>
 
-                <div className="wrap-input">
+                <div className="flex">
                 <input
-                        className={placa !== "" ? 'has-val input' : 'input'}
-                        type="text"
-                        value={placa}
-                        onChange={e => setPlaca(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Placa"></span>
+                    placeholder="Placa"
+                    className={placa !== "" ? 'has-val input' : 'input'}
+                    type="text"
+                    value={placa}
+                    onChange={e => setPlaca(e.target.value)}/>
                 </div>
 
-                <span className="qtd_carona"> Carona para até quantas pessoas?</span>
+                <span className="conteudo-principal-escrito-subtitulo flex"> Carona para até quantas pessoas?</span>
 
-                <select className="select-pessoas" name="select">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-
-                <form action="/cadastro_endereco">
-                    <input className='cadastro-form-btn' type="submit" value="Continuar"/>
-                </form>
-
-                <div className='text-entrar-conta'>
-                    <span className='txt1'>Esqueceu de alguma informação? </span>
-                    <Link className='txt2' to='/cadastro'> Clique aqui.</Link>
+                <div className="flex">   
+                    <select className="input select-pessoas" name="select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
                 </div>
+
+                <div className="flex">    
+                    <form action="/tela_motorista">
+                        <input className='login-form-btn' type="submit" value="Cadastrar carro"/>
+                    </form>
+                </div>
+                
+                <div className='flex'>
+                    <span className='criar-conta'>Esqueceu de alguma informação? </span>
+                    <Link className='criar-conta-cadastro' to='/cadastro'> Clique aqui.</Link>
+                </div>
+
+                <footer className="rodape">
+                    <p className="rodape-escrito">Developed by</p>
+                    <p className="rodape-escrito-nome">Augusto Lima, Emanoel Santos, Gustavo Alves, Marcos Vinicius</p>     
+                </footer>
 
             </form>
             

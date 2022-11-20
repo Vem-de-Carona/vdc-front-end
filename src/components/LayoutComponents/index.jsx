@@ -1,7 +1,7 @@
 
 import {Link} from 'react-router-dom';
 import vdcIMG from '../../assets/Logo_VDC.png';
-import "./styles.css";
+import "../styles.css";
 
 
 export const LayoutComponents = (props) => {
@@ -9,7 +9,7 @@ export const LayoutComponents = (props) => {
         <div className="container">
             <div className='header'>
                 <div className='left-side'>
-                    <span><img src={vdcIMG} alt="Vem de Carona"/></span>
+                    <span><img src={vdcIMG} alt="Vem de Carona" width='350px'/></span>
                 </div>
           
                 <div className='right-side'>

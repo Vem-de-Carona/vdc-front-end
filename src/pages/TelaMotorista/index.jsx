@@ -1,11 +1,11 @@
 import { LayoutSemLoginCadastro } from '../../components/LayoutSemLoginCadastro';
 import usuario from '../../assets/usuario.png';
 
-export const TelaUsuario = () => {
+export const TelaMotorista = () => {
   return (
     <LayoutSemLoginCadastro>
 
-        <div className='conteudo-principal-escrito-subtitulo'>Área Passageiro</div>   
+        <div className='conteudo-principal-escrito-subtitulo'>Área Motorista</div>   
 
         <div className='container-passageiro'>
             <div className='center-passageiro'>

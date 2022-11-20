@@ -13,96 +13,90 @@ export const CadastroEndereco = () => {
 
     return(
         <LayoutSemLoginCadastro>
+            <form className="conteudo-principal-escrito">
 
-            <form className="cadastro-form">
-                <span className="cadastro-title"> Insira os dados do seu endereço:</span>
-            </form>
-
-            <div className="wrap-input">
-
-                <input
+                <span className="conteudo-principal-escrito-subtitulo flex"> Insira os dados do seu endereço:</span>
+                
+                <div className="flex">
+                    <input
+                        placeholder="Rua"
                         className={rua !== "" ? 'has-val input' : 'input'}
                         type="text"
                         value={rua}
-                        onChange={e => setRua(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Rua"></span>
-            </div>
+                        onChange={e => setRua(e.target.value)}/>
+                </div>
 
-            <div className="wrap-input">
-
-                <input
+                <div className="flex">
+                    <input
+                        placeholder="Número"
                         className={numero !== "" ? 'has-val input' : 'input'}
                         type="text"
                         value={numero}
-                        onChange={e => setNumero(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Número"></span>
-            </div>
+                        onChange={e => setNumero(e.target.value)}/>
+                </div>
 
-            <div className="wrap-input">
-
-                <input
+                <div className="flex">
+                    <input
+                        placeholder="Complemento"
                         className={complemento !== "" ? 'has-val input' : 'input'}
                         type="text"
                         value={complemento}
-                        onChange={e => setComplemento(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Complemento"></span>
-            </div>
+                        onChange={e => setComplemento(e.target.value)}/>
+                </div>
 
-            <div className="wrap-input">
-
-                <input
+                <div className="flex">
+                    <input
+                        placeholder="CEP"
                         className={cep !== "" ? 'has-val input' : 'input'}
                         type="text"
                         value={cep}
-                        onChange={e => setCEP(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="CEP"></span>
-            </div>
+                        onChange={e => setCEP(e.target.value)}/>
+                </div>
 
-            <div className="wrap-input">
-
-                <input
+                <div className="flex">
+                    <input
+                        placeholder="Bairro"
                         className={bairro !== "" ? 'has-val input' : 'input'}
                         type="text"
                         value={bairro}
-                        onChange={e => setBairro(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Bairro"></span>
-            </div>
+                        onChange={e => setBairro(e.target.value)}/>
+                </div>
 
-            <div className="wrap-input">
-
-                <input
+                <div className="flex">
+                    <input
+                        placeholder="Cidade"
                         className={cidade !== "" ? 'has-val input' : 'input'}
                         type="text"
                         value={cidade}
-                        onChange={e => setCidade(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Cidade"></span>
-            </div>
+                        onChange={e => setCidade(e.target.value)}/>
+                </div>
 
-            <div className="wrap-input">
-
-                <input
+                <div className="flex">
+                    <input
+                        placeholder="Estado"
                         className={estado !== "" ? 'has-val input' : 'input'}
                         type="text"
                         value={estado}
-                        onChange={e => setEstado(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Estado"></span>
-            </div>
-
-            <form action="/cadastro-finalizado"> 
-                    <input className='cadastro-form-btn' type="submit" value="Cadastrar-se"/>
-                </form>
-
-                <div className='text-entrar-conta'>
-                    <span className='txt1'>Esqueceu de alguma informação? </span>
-                    <Link className='txt2' to='/cadastro'> Clique aqui.</Link>
+                        onChange={e => setEstado(e.target.value)}/>
                 </div>
+
+                <div className="flex">
+                    <form action="/tela_usuario"> 
+                        <input className='login-form-btn' type="submit" value="Cadastrar endereço"/>
+                    </form>
+                </div>
+
+                <div className='flex'>
+                    <span className='criar-conta'>Esqueceu de alguma informação? </span>
+                    <Link className='criar-conta-cadastro' to='/cadastro'> Clique aqui.</Link>
+                </div>
+
+                <footer className="rodape">
+                    <p className="rodape-escrito">Developed by</p>
+                    <p className="rodape-escrito-nome">Augusto Lima, Emanoel Santos, Gustavo Alves, Marcos Vinicius</p>     
+                </footer>
+
+        </form>
 
         </LayoutSemLoginCadastro>
     )

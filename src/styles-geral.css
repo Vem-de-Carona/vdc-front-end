@@ -9,17 +9,6 @@
     margin-bottom: 5px;
 }
 
-.select-pessoas{
-    width: 20%;
-    padding: 10px;
-    position: relative;
-    margin-bottom: 20px;
-    font-family: Nunito, sans-serif;
-    border-radius: 4px;
-    color: black;
-    border: #0756d5 solid 2px;
-}
-
 /* TELA MOTORISTA E PASSAGEIRO */
 
 .container-passageiro {
@@ -72,15 +61,12 @@
 
 /* --=-- REFAZENDO --=-- */
 
-
-/* PADRÃO */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 100%;  
-    background: linear-gradient(68deg, #304271 16.62%, #4d7794 85.61%);
+    background: linear-gradient(68deg, #157a8c 16.62%, #b3aca4 85.61%);
     background-attachment: fixed; 
     font-family: Nunito, sans-serif;
 }
@@ -118,8 +104,6 @@
     font-weight: bolder;
     color:#fff2e778;
 }
-
-/* Página Incial */
 
 .conteudo-principal {
     display: flex;
@@ -195,9 +179,6 @@
     color:#FFF2E7;
 }
 
-/* Cadastro e login */
-
-
 .input {
     padding: 25px;
     font-family: 'Sarala', sans-serif;
@@ -209,6 +190,10 @@
     border: none;
     box-shadow: 1px 4px 5px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+}
+
+.input:hover {
+    border: solid black 1px;
 }
 
 .input-date {
@@ -224,7 +209,7 @@
     color:#fff2e778;
 }
 
-.input:hover {
+.input-date:hover {
     border: solid black 1px;
 }
 
@@ -264,30 +249,8 @@
     text-decoration: none;
 }
 
-
-
-
-
-
-
-
-
-
-.dataNascimento{
-    width: 100%;
-    position: relative;
-    margin-bottom: 20px;
-    color: #0756d5;
-}
-
-.select-user{
-    width: 100%;
-    padding: 15px;
-    position: relative;
-    margin-bottom: 20px;
+.select-pessoas{
+    padding: 20px;
     font-family: Nunito, sans-serif;
-    border-radius: 4px;
-    color: #0756d5;
-    border: #0756d5 solid 2px;
+    color: black;
 }
-
