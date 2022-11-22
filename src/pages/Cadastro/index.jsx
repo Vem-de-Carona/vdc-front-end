@@ -15,8 +15,6 @@ export const Cadastro = () => {
         <LayoutComponents>
             <form className="conteudo-principal-escrito">
 
-                <h1 className="conteudo-principal-escrito-subtitulo flex"> Insira suas inforçaões para se cadastrar:</h1>
-
                 <h1 className="conteudo-principal-escrito-subtitulo flex"> Insira suas informações para se cadastrar:</h1>
 
                 <div className="flex">
