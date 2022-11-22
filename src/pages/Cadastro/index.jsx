@@ -14,7 +14,11 @@ export const Cadastro = () => {
         <LayoutComponents>
             <form className="conteudo-principal-escrito">
 
+<<<<<<< HEAD
                 <h1 className="conteudo-principal-escrito-subtitulo flex"> Insira suas inforçaões para se cadastrar:</h1>
+=======
+                <h1 className="conteudo-principal-escrito-subtitulo flex"> Insira suas informações para se cadastrar:</h1>
+>>>>>>> 54ed8651d6b0904c4d98beb32d25003966b1ed5d
 
                 <div className="flex">
                     <input
@@ -34,10 +38,19 @@ export const Cadastro = () => {
                         onChange={e => setSobrenome(e.target.value)}/>
                 </div>
 
+<<<<<<< HEAD
                 <div className="flex">           
                     <input 
                         className="input-date" 
                         type="date"/>
+=======
+                <div className="flex">
+                    <input
+                        className="input-date"
+                        type="date"
+                        value = {dataNascimento}
+                        onChange = {e => setDataNascimento(e.target.value)}/>
+>>>>>>> 54ed8651d6b0904c4d98beb32d25003966b1ed5d
                 </div>
 
                 <div className="flex">
@@ -70,7 +83,7 @@ export const Cadastro = () => {
                 </div>
 
                 <div className="flex">
-                    <input 
+                    <input
                         placeholder="Informe sua senha"
                         className={password !== "" ? 'has-val input' : 'input'}
                         type="password"
@@ -86,13 +99,33 @@ export const Cadastro = () => {
                         type="password"
                         value={passworddnv}/>
                     <span className="focus-input" data-></span>
-                </div>            
-                
-                <div className="flex">  
+                </div>
+
+                <div className="flex">
                     <form action="/telapassageiro">
-                        <input className='login-form-btn' type="submit" value="Continuar"/>
+                        <input className='login-form-btn' type="submit" value="Continuar"
+                               onClick = {
+                                   async e => {
+                                       e.preventDefault();
+                                       const resp = await fetch("/signUp/passenger", {
+                                           method: "POST",
+                                           body: JSON.stringify({
+                                               cpf: cpf,
+                                               name: nome,
+                                               surname: sobrenome,
+                                               birthDate: dataNascimento,
+                                               email: email,
+                                               phone: telefone,
+                                               password: password
+                                           }),
+                                           headers: {
+                                               'Content-Type': 'application/json',
+                                           },
+                                       });
+                                   }
+                               }/>
                     </form>
-                </div>               
+                </div>
 
                 <div className='flex'>
                     <span className='criar-conta'>Já possui conta? </span>
@@ -101,7 +134,7 @@ export const Cadastro = () => {
 
                 <footer className="rodape">
                     <p className="rodape-escrito">Developed by</p>
-                    <p className="rodape-escrito-nome">Augusto Lima, Emanoel Santos, Gustavo Alves, Marcos Vinicius</p>     
+                    <p className="rodape-escrito-nome">Augusto Lima, Emanoel Santos, Gustavo Alves, Marcos Vinicius</p>
                 </footer>
 
             </form>
