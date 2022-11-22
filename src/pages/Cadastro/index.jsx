@@ -10,15 +10,14 @@ export const Cadastro = () => {
     const [cpf, setCPF] = useState("")
     const [password, setPassword] = useState("")
     const [passworddnv, setPasswordNovamente] = useState("")
+    const [dataNascimento, setDataNascimento] = useState("")
     return (
         <LayoutComponents>
             <form className="conteudo-principal-escrito">
 
-<<<<<<< HEAD
                 <h1 className="conteudo-principal-escrito-subtitulo flex"> Insira suas inforçaões para se cadastrar:</h1>
-=======
+
                 <h1 className="conteudo-principal-escrito-subtitulo flex"> Insira suas informações para se cadastrar:</h1>
->>>>>>> 54ed8651d6b0904c4d98beb32d25003966b1ed5d
 
                 <div className="flex">
                     <input
@@ -31,26 +30,19 @@ export const Cadastro = () => {
 
                 <div className="flex">
                     <input
-                         placeholder="Informar sobrenome"
+                        placeholder="Informar sobrenome"
                         className={sobrenome !== "" ? 'has-val input' : 'input'}
                         type="text"
                         value={sobrenome}
                         onChange={e => setSobrenome(e.target.value)}/>
                 </div>
 
-<<<<<<< HEAD
-                <div className="flex">           
-                    <input 
-                        className="input-date" 
-                        type="date"/>
-=======
                 <div className="flex">
                     <input
                         className="input-date"
                         type="date"
                         value = {dataNascimento}
                         onChange = {e => setDataNascimento(e.target.value)}/>
->>>>>>> 54ed8651d6b0904c4d98beb32d25003966b1ed5d
                 </div>
 
                 <div className="flex">
@@ -88,8 +80,7 @@ export const Cadastro = () => {
                         className={password !== "" ? 'has-val input' : 'input'}
                         type="password"
                         value={password}
-                        onChange={e => setPassword(e.target.value)}
-                    />
+                        onChange={e => setPassword(e.target.value)}/>
                 </div>
 
                 <div className="flex">
@@ -136,7 +127,6 @@ export const Cadastro = () => {
                     <p className="rodape-escrito">Developed by</p>
                     <p className="rodape-escrito-nome">Augusto Lima, Emanoel Santos, Gustavo Alves, Marcos Vinicius</p>
                 </footer>
-
             </form>
         </LayoutComponents>
     );
