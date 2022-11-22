@@ -15,8 +15,9 @@ export const LayoutComponents = (props) => {
                 <div className='right-side'>
                     <nav>
                         <ul class="nav">
-                            <li id="login"><Link to="/login">Login</Link></li>
-                            <li id="cadastro"><Link to="/cadastro">Cadastro</Link></li>
+                            <li id="nav-botao"><Link to="/">Home</Link></li>
+                            <li id="nav-botao"><Link to="/login">Login</Link></li>
+                            <li id="nav-botao"><Link to="/cadastro">Cadastro</Link></li>
                         </ul>
                     </nav>
                 </div>

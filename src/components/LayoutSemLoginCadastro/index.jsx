@@ -1,6 +1,5 @@
 
 import vdcIMG from '../../assets/Logo_VDC.png';
-import "./styles.css";
 
 
 export const LayoutSemLoginCadastro = (props) => {

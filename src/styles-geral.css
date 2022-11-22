@@ -4,272 +4,191 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body, html {
+    font-size: 100%;  
+    background: linear-gradient(68deg, #304271 16.62%, #4d7794 85.61%);
+    background-attachment: fixed; 
     font-family: Nunito, sans-serif;
 }
 
-.cadastro-form{
-    width: 100%;
+.rodape {
+    margin-top: 64px;;
+    padding: 32px;
+    border-top: 0.4px solid #FFF2E7;
 }
 
-.cadastro-title{
-    display: block;
-    font-size: 30px;
-    color: #0756d5;
-    line-height: 1.2;
-    margin-bottom: 22px;
+.rodape-escrito {
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color:#FFF2E7;
+    text-align: center;
+    margin-bottom: 12px;
 }
 
-.login-form{
-    width: 100%;
+.rodape-escrito-nome {
+    font-family: 'Sarala', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    color:#FFF2E7;
+    text-align: center;
 }
 
-.login-title{
-    display: block;
-    font-size: 30px;
-    color: #0756d5;
-    line-height: 1.2;
+.flex {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
 }
 
-.login-infos{
-    display: block;
-    font-size: 30px;
-    color: #0756d5;
-    line-height: 1.2;
-    margin-bottom: 22px;
+::placeholder{
+    font-weight: bolder;
+    color:#fff2e778;
 }
 
-.wrap-input{
-    width: 100%;
-    position: relative;
-    border: 2px solid #0756d5;
-    border-radius: 4px;
-    margin-bottom: 20px;
+/* Página Incial */
+
+.conteudo-principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.input{
-    font-size: 15px;
-    color: #000000;
-    line-height: 1.2;
+.conteudo-principal-escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+
+.conteudo-principal-escrito-titulo {
+    font-family: 'Righteous', cursive;
+    font-weight: 400;
+    font-size: 64px;
+    color:#ECD6C4;
+}
+
+.conteudo-principal-escrito-subtitulo {
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #FFF2E7;
+}
+
+.conteudo-principal-escrito-botao {
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color:#FFF2E7;
+    text-decoration: none;
+    width: 180px;
+    height: 67px;
     border: none;
-    display: block;
-    width: 100%;
-    height: 45px;
-    background-color: #fff;
-    padding: 0 5px;
+    box-shadow: 1px 4px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
 }
 
-.focus-input{
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    color: #999999;
+.conteudo-principal-escrito-botao:hover {
+    background-color: rgba(236, 214, 196, 0.53);
+    border: solid black 1px;
 }
 
-.focus-input::before {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
+.conteudo-secundario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 48px;
 }
 
-.focus-input::after {
-    font-size: 15px;
-    color: #999999;
-    line-height: 1.2;
-    content: attr(data-placeholder);
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 14px;
-    left: 0px;
-    padding-left: 5px;
-
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
+.conteudo-secundario-titulo {
+    border-top: 0.4px solid #ECD6C4;
+    padding-top: 48px;
+    font-family: 'Righteous', cursive;
+    font-weight: 400;
+    font-size: 24px;
+    color: #FFF2E7;
+    margin-bottom: 16px;
 }
 
-.input:focus{
+.conteudo-secundario-paragrafo {
+    font-family: 'Sarala', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color:#FFF2E7;
+}
+
+/* Cadastro e login */
+
+
+.input {
+    padding: 25px;
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color:#FFF2E7;
+    width: 560px;
+    height: 56px;
+    border: none;
+    box-shadow: 1px 4px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.input:hover {
+    border: solid black 1px;
+}
+
+.input-date {
+    padding: 25px;
+    font-family: 'Sarala', sans-serif;
+    font-size: 16px;
+    width: 560px;
+    height: 56px;
+    border: none;
+    box-shadow: 1px 4px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    font-weight: bolder;
+    color:#fff2e778;
+}
+
+.input-date:hover {
+    border: solid black 1px;
+}
+
+.input:focus {
     outline: 0;
 }
 
-.input:focus + .focus-input:after{
-    top: -20px;
-}
-
-.input:focus + .focus-input:before{
-    width: 100%;
-}
-
-.has-val + .focus-input::after{
-    top: -20px;
-}
-
-.has-val + .focus-input::before{
-    width: 100%;
-}
-
-.container-login-form-btn{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 13px;
-}
-
-.login-form-btn{
-    font-size: 20px;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    line-height: 1.2;
+.login-form-btn {
     text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 50px;
-    background: #0756d5;
-}
-
-.login-form-btn:hover{
-    cursor: pointer;
-}
-
-.cadastro-form-btn{
-    font-size: 20px;
+    background: #194175;   
+    font-family: 'Sarala', sans-serif;
+    font-weight: bolder;
+    font-size: 18px;
+    color:#ECD6C4;
+    width: 280px;
+    height: 56px;
     border: none;
-    border-radius: 5px;
-    color: #fff;
-    line-height: 1.2;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 50px;
-    background: #0756d5;
+    box-shadow: 1px 4px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
 }
 
-.cadastro-form-btn:hover{
+.login-form-btn:hover {
     cursor: pointer;
+    border: solid black 1px;
 }
 
-.text-criar-conta{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-}
 
-.txt1{
+.criar-conta {
     font-size: 14px;
-    padding-right: 5px;
+    padding-right: 10px;
+    color: #FFF2E7;
 }
 
-.txt2{
-    font-size: 14px;
-    color: #0756d5;
-    line-height: 1.5;
+.criar-conta-cadastro {
+    font-size: 16px;
+    color: #9cb9e8;
     text-decoration: none;
-}
-
-/* CADASTRO USUÁRIO */
-
-.dataNascimento{
-    width: 100%;
-    position: relative;
-    margin-bottom: 20px;
-    color: #0756d5;
-}
-
-.select-user{
-    width: 100%;
-    padding: 15px;
-    position: relative;
-    margin-bottom: 20px;
-    font-family: Nunito, sans-serif;
-    border-radius: 4px;
-    color: #0756d5;
-    border: #0756d5 solid 2px;
-}
-
-/* CADASTRO CARRO*/
-
-.qtd_carona{
-    display: block;
-    font-size: 15px;
-    color: black;
-    line-height: 1.2;
-    margin-top: -10px;
-    margin-bottom: 5px;
-}
-
-.select-pessoas{
-    width: 20%;
-    padding: 10px;
-    position: relative;
-    margin-bottom: 20px;
-    font-family: Nunito, sans-serif;
-    border-radius: 4px;
-    color: black;
-    border: #0756d5 solid 2px;
-}
-
-/* TELA MOTORISTA E PASSAGEIRO */
-
-.container-passageiro {
-    width: 100%;
-    background-color: rgb(180, 208, 252);
-    border: rgb(37, 124, 253) 5px solid;
-}
-
-.container-passageiro ul {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.container-passageiro li {
-    list-style: none
-}
-
-.match-li-passageiro {
-    border: rgb(180, 208, 252) 3px solid;
-    background-color: #eaf1fb;
-}
-
-.match-li-passageiro:hover {
-    background-color: rgb(180, 208, 252);
-}
-
-.container-passageiro input{
-    height: 50px;
-    width: 120px;
-    float: left;
-}
-
-.viagem-passageiro {
-    width: 100%;
-    height: 30px;
-    border: none;
-    font-family: Bolder, Helvetica, sans-serif;
-    color: rgb(245, 249, 255);
-    font-size: 24px;
-    margin-bottom: 20px;
-    background-color: rgb(180, 208, 252);
-}
-
-.center_button-passageiro {
-    display: flex;
-    justify-content:space-around;
-    margin-top: 10px;
 }

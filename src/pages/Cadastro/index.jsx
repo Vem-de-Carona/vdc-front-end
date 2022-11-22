@@ -13,124 +13,118 @@ export const Cadastro = () => {
     const [dataNascimento, setDataNascimento] = useState("")
     return (
         <LayoutComponents>
-            <form className="cadastro-form">
+            <form className="conteudo-principal-escrito">
 
-                <span className="cadastro-title"> Insira suas informações para se cadastrar: </span>
+                <h1 className="conteudo-principal-escrito-subtitulo flex"> Insira suas informações para se cadastrar:</h1>
 
-                <div className="wrap-input">
+                <div className="flex">
                     <input
+                        placeholder="Informar nome"
                         className={nome !== "" ? 'has-val input' : 'input'}
                         type="text"
                         value={nome}
-                        onChange={e => setNome(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Informar nome"></span>
+                        onChange={e => setNome(e.target.value)}/>
                 </div>
 
-                <div className="wrap-input">
+                <div className="flex">
                     <input
+                        placeholder="Informar sobrenome"
                         className={sobrenome !== "" ? 'has-val input' : 'input'}
                         type="text"
                         value={sobrenome}
-                        onChange={e => setSobrenome(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Informar sobrenome"></span>
+                        onChange={e => setSobrenome(e.target.value)}/>
                 </div>
 
-                <div className="dataNascimento">
-                    <span> Data de nascimento: </span>
-                    <input className="nascimento" type="date"
-                    value = {dataNascimento}
-                    onChange = {e => setDataNascimento(e.target.value)}
-                    />
-                </div>
-
-                <div className="wrap-input">
+                <div className="flex">
                     <input
+                        className="input-date"
+                        type="date"
+                        value = {dataNascimento}
+                        onChange = {e => setDataNascimento(e.target.value)}/>
+                </div>
+
+                <div className="flex">
+                    <input
+                        placeholder="Informar e-mail"
                         className={email !== "" ? 'has-val input' : 'input'}
                         type="email"
                         value={email}
-                        onChange={e => setEmail(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Informar e-mail"></span>
+                        onChange={e => setEmail(e.target.value)}/>
                 </div>
 
-                <div className="wrap-input">
+                <div className="flex">
                     <input
+                        placeholder="Informar telefone"
                         className={telefone !== "" ? 'has-val input' : 'input'}
                         type="tel"
                         value={telefone}
-                        onChange={e => setTelefone(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Informar telefone"></span>
+                        onChange={e => setTelefone(e.target.value)}/>
                 </div>
 
-                <div className="wrap-input">
+                <div className="flex">
                     <input
+                        placeholder="Informar CPF"
                         className={cpf !== "" ? 'has-val input' : 'input'}
                         type="text"
                         maxLength={11}
                         minLength={11}
                         value={cpf}
-                        onChange={e => setCPF(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Informar CPF"></span>
+                        onChange={e => setCPF(e.target.value)}/>
                 </div>
 
-                <div className="wrap-input">
+                <div className="flex">
                     <input
+                        placeholder="Informe sua senha"
                         className={password !== "" ? 'has-val input' : 'input'}
                         type="password"
                         value={password}
-                        onChange={e => setPassword(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Informe sua senha"></span>
+                        onChange={e => setPassword(e.target.value)}/>
                 </div>
 
-                <div className="wrap-input">
+                <div className="flex">
                     <input
+                        placeholder="Informe sua senha novamente"
                         className={passworddnv !== "" ? 'has-val input' : 'input'}
                         type="password"
-                        value={passworddnv}
-                        onChange={e => setPasswordNovamente(e.target.value)}
-                    />
-                    <span className="focus-input" data-placeholder="Informe sua senha novamente"></span>
+                        value={passworddnv}/>
+                    <span className="focus-input" data-></span>
                 </div>
 
-                <select className="select-user" name="select">
-                    <option value="valor1">Sou motorista</option>
-                    <option value="valor2">Sou passageiro</option>
-                </select>
-
-                <form action="/cadastro-">
-                    <input className='cadastro-form-btn' type="submit" value="Continuar"
-                    onClick = {
-                        async e => {
-                            e.preventDefault();
-                            const resp = await fetch("/signUp/passenger", {
-                                method: "POST",
-                                body: JSON.stringify({
-                                    cpf: cpf,
-                                    name: nome,
-                                    surname: sobrenome,
-                                    birthDate: dataNascimento,
-                                    email: email,
-                                    phone: telefone,
-                                    password: password
-                                }),
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                },
-                            });
-                        }
-                    }/>
-                </form>
-
-                <div className='text-entrar-conta'>
-                    <span className='txt1'>Já possui conta? </span>
-                    <Link className='txt2' to='/login'> Entre por aqui.</Link>
+                <div className="flex">
+                    <form action="/telapassageiro">
+                        <input className='login-form-btn' type="submit" value="Continuar"
+                               onClick = {
+                                   async e => {
+                                       e.preventDefault();
+                                       const resp = await fetch("/signUp/passenger", {
+                                           method: "POST",
+                                           body: JSON.stringify({
+                                               cpf: cpf,
+                                               name: nome,
+                                               surname: sobrenome,
+                                               birthDate: dataNascimento,
+                                               email: email,
+                                               phone: telefone,
+                                               password: password
+                                           }),
+                                           headers: {
+                                               'Content-Type': 'application/json',
+                                           },
+                                       });
+                                   }
+                               }/>
+                    </form>
                 </div>
 
+                <div className='flex'>
+                    <span className='criar-conta'>Já possui conta? </span>
+                    <Link className='criar-conta-cadastro' to='/login'> Entre por aqui.</Link>
+                </div>
+
+                <footer className="rodape">
+                    <p className="rodape-escrito">Developed by</p>
+                    <p className="rodape-escrito-nome">Augusto Lima, Emanoel Santos, Gustavo Alves, Marcos Vinicius</p>
+                </footer>
             </form>
         </LayoutComponents>
     );
