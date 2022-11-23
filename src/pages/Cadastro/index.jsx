@@ -99,7 +99,6 @@ export const Cadastro = () => {
                         <input className='cadastro-form-btn' type="submit" value="Continuar"
                         onClick = {
                             async e => {
-                                
                                 e.preventDefault();
                                 const resp = await fetch("/signUp/user", {
                                     method: "POST",
@@ -108,20 +107,19 @@ export const Cadastro = () => {
                                         'Content-Type': 'application/json'
                                     },
                                     body: JSON.stringify({
-                                        cpf: "cpf",
-                                        name: "nome",
-                                        surname: "sobrenome",
-                                        birthDate: "dataNascimento",
-                                        email: "email",
-                                        phone: "telefone",
-                                        password: "password"
+                                        cpf: cpf,
+                                        name: nome,
+                                        surname: sobrenome,
+                                        birthDate: dataNascimento,
+                                        email: email,
+                                        phone: telefone,
+                                        password: password
                                     })
                                 });
+                                console.log(resp.status);
                                 if (resp.status === 201){
-                                    <Navigate to="/telapassageiro" replace={true}/>
+                                    window.location.href = '/telapassageiro';
                                 }
-                                const content = await resp.json();
-                                console.log(content);  
                         }}/>
                     </form>
                 </div>
