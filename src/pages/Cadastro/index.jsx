@@ -1,6 +1,8 @@
 import { LayoutComponents } from "../../components/LayoutComponents";
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import InputMask from 'react-input-mask';
 
 export const Cadastro = () => {
     const [nome, setNome] = useState("")
@@ -11,6 +13,7 @@ export const Cadastro = () => {
     const [password, setPassword] = useState("")
     const [passworddnv, setPasswordDnv] = useState("")
     const [dataNascimento, setDataNascimento] = useState("")
+    const navigate = useNavigate();
     return (
         <LayoutComponents>
             <form className="conteudo-principal-escrito">
@@ -62,12 +65,11 @@ export const Cadastro = () => {
                 </div>
 
                 <div className="flex">
-                    <input
+                    <InputMask
                         placeholder="Informar CPF"
                         className={cpf !== "" ? 'has-val input' : 'input'}
-                        type="text"
-                        maxLength={11}
-                        minLength={11}
+                        type="cpf"
+                        mask="999.999.999-99"
                         value={cpf}
                         onChange={e => setCPF(e.target.value)}/>
                 </div>
@@ -105,17 +107,17 @@ export const Cadastro = () => {
                                         'Content-Type': 'application/json'
                                     },
                                     body: JSON.stringify({
-                                    cpf: cpf,
-                                    name: nome,
-                                    surname: sobrenome,
-                                    birthDate: dataNascimento,
-                                    email: email,
-                                    phone: telefone,
-                                    password: password
+                                        cpf: cpf,
+                                        name: nome,
+                                        surname: sobrenome,
+                                        birthDate: dataNascimento,
+                                        email: email,
+                                        phone: telefone,
+                                        password: password
                                     })
                                 });
-                                if (resp == 201){
-                                    <form action="/telapassageiro"></form>
+                                if (resp === 201){
+                                    navigate('/telapassageiro')
                                 }
                                 const content = await resp.json();
                                 console.log(content);  
