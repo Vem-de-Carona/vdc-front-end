@@ -56,10 +56,11 @@ export const Cadastro = () => {
                 </div>
 
                 <div className="flex">
-                    <input
+                    <InputMask
                         placeholder="Informar telefone"
                         className={telefone !== "" ? 'has-val input' : 'input'}
                         type="tel"
+                        mask="(99) 99999-9999"
                         value={telefone}
                         onChange={e => setTelefone(e.target.value)}/>
                 </div>
