@@ -9,7 +9,7 @@ export const Cadastro = () => {
     const [telefone, setTelefone] = useState("")
     const [cpf, setCPF] = useState("")
     const [password, setPassword] = useState("")
-    const [passworddnv] = useState("")
+    const [passworddnv, setPasswordDnv] = useState("")
     const [dataNascimento, setDataNascimento] = useState("")
     return (
         <LayoutComponents>
@@ -86,35 +86,39 @@ export const Cadastro = () => {
                         placeholder="Informe sua senha novamente"
                         className={passworddnv !== "" ? 'has-val input' : 'input'}
                         type="password"
-                        value={passworddnv}/>
+                        value={passworddnv}
+                        onChange={e => setPasswordDnv(e.target.value)}/>
                     <span className="focus-input" data-></span>
                 </div>
 
                 <div className="flex">
-                    <form action="/cadastro-">
+                    <form>
                         <input className='cadastro-form-btn' type="submit" value="Continuar"
                         onClick = {
                             async e => {
-                                if (resp == 200)
-                                        e.preventDefault();
-                                        const resp = await fetch("/signUp/passenger", {
-                                            method: "POST",
-                                            headers: {
-                                                'Accept': 'application/json',
-                                                'Content-Type': 'application/json'
-                                            },
-                                            body: JSON.stringify({
-                                            cpf: cpf,
-                                            name: nome,
-                                            surname: sobrenome,
-                                            birthDate: dataNascimento,
-                                            email: email,
-                                            phone: telefone,
-                                            password: password
-                                            })
-                                        });
-                                        const content = await resp.json();
-                                        console.log(content);
+                                
+                                e.preventDefault();
+                                const resp = await fetch("/signUp/user", {
+                                    method: "POST",
+                                    headers: {
+                                        'Accept': 'application/json',
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({
+                                    cpf: cpf,
+                                    name: nome,
+                                    surname: sobrenome,
+                                    birthDate: dataNascimento,
+                                    email: email,
+                                    phone: telefone,
+                                    password: password
+                                    })
+                                });
+                                if (resp == 201){
+                                    <form action="/telapassageiro"></form>
+                                }
+                                const content = await resp.json();
+                                console.log(content);  
                         }}/>
                     </form>
                 </div>

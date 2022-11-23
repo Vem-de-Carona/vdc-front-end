@@ -180,6 +180,24 @@
     border: solid black 1px;
 }
 
+.cadastro-form-btn {
+    text-transform: uppercase;
+    background: #194175;   
+    font-family: 'Sarala', sans-serif;
+    font-weight: bolder;
+    font-size: 18px;
+    color:#ECD6C4;
+    width: 280px;
+    height: 56px;
+    border: none;
+    box-shadow: 1px 4px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.cadastro-form-btn:hover {
+    cursor: pointer;
+    border: solid black 1px;
+}
 
 .criar-conta {
     font-size: 14px;
