@@ -1,7 +1,7 @@
 import { LayoutComponents } from "../../components/LayoutComponents";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import InputMask from 'react-input-mask';
 
 export const Cadastro = () => {
@@ -13,7 +13,7 @@ export const Cadastro = () => {
     const [password, setPassword] = useState("")
     const [passworddnv, setPasswordDnv] = useState("")
     const [dataNascimento, setDataNascimento] = useState("")
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
     return (
         <LayoutComponents>
             <form className="conteudo-principal-escrito">
@@ -108,17 +108,17 @@ export const Cadastro = () => {
                                         'Content-Type': 'application/json'
                                     },
                                     body: JSON.stringify({
-                                        cpf: cpf,
-                                        name: nome,
-                                        surname: sobrenome,
-                                        birthDate: dataNascimento,
-                                        email: email,
-                                        phone: telefone,
-                                        password: password
+                                        cpf: "cpf",
+                                        name: "nome",
+                                        surname: "sobrenome",
+                                        birthDate: "dataNascimento",
+                                        email: "email",
+                                        phone: "telefone",
+                                        password: "password"
                                     })
                                 });
-                                if (resp === 201){
-                                    navigate('/telapassageiro')
+                                if (resp.status === 201){
+                                    <Navigate to="/telapassageiro" replace={true}/>
                                 }
                                 const content = await resp.json();
                                 console.log(content);  
