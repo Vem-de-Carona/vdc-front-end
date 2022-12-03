@@ -1,6 +1,7 @@
 import { LayoutSemLoginCadastro } from "../../components/LayoutSemLoginCadastro";
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import InputMask from 'react-input-mask';
 
 export const CadastroCarro = () => {
     const [cnh, setCNH] = useState("")
@@ -16,10 +17,11 @@ export const CadastroCarro = () => {
                 <span className="conteudo-principal-escrito-subtitulo flex"> Insira sua CNH e os dados do carro:</span>
 
                 <div className="flex">
-                <input
+                <InputMask
                     placeholder="CNH"
                     className={cnh !== "" ? 'has-val input' : 'input'}
                     type="text"
+                    mask="999999999"
                     maxLength={11}
                     minLength={11}
                     value={cnh}
@@ -56,10 +58,11 @@ export const CadastroCarro = () => {
                 </div>
 
                 <div className="flex">
-                <input
+                <InputMask
                     placeholder="Placa"
                     className={placa !== "" ? 'has-val input' : 'input'}
                     type="text"
+                    mask="aaa 9a99"
                     value={placa}
                     onChange={e => setPlaca(e.target.value)}/>
                 </div>
@@ -76,8 +79,30 @@ export const CadastroCarro = () => {
                 </div>
 
                 <div className="flex">    
-                    <form action="/tela_motorista">
-                        <input className='login-form-btn' type="submit" value="Cadastrar carro"/>
+                <form>
+                        <input className='cadastro-form-btn' type="submit" value="CADASTRAR"
+                        onClick = {
+                            async e => {
+                                e.preventDefault();
+                                const resp = await fetch("/signUp/user", {
+                                    method: "POST",
+                                    headers: {
+                                        'Accept': 'application/json',
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({
+                                        cnh: cnh,
+                                        marca: marca,
+                                        modelo: modelo,
+                                        ano: ano,
+                                        placa: placa
+                                    })
+                                });
+                                console.log(resp.status);
+                                if (resp.status === 201){
+                                    window.location.href = '/telamotorista';
+                                }
+                        }}/>
                     </form>
                 </div>
                 
