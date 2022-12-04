@@ -10,6 +10,7 @@ export const CadastroCarro = () => {
     const [modelo, setModelo] = useState("")
     const [ano, setAno] = useState("")
     const [placa, setPlaca] = useState("")
+    const [quantidade, setQuantidade] = useState("")
 
     return(
         <LayoutSemLoginCadastro>
@@ -30,14 +31,15 @@ export const CadastroCarro = () => {
                 </div>
 
                 <div className="flex">
-                    <input
-                        placeholder="Informar CPF"
-                        className={cpf !== "" ? 'has-val input' : 'input'}
-                        type="text"
-                        maxLength={11}
-                        minLength={11}
-                        value={cpf}
-                        onChange={e => setCPF(e.target.value)}/>
+                <InputMask
+                    placeholder="CPF"
+                    className={cnh !== "" ? 'has-val input' : 'input'}
+                    type="text"
+                    mask="999999999"
+                    maxLength={11}
+                    minLength={11}
+                    value={cpf}
+                    onChange={e => setCPF(e.target.value)}/>
                 </div>
 
                 <div className="flex">
@@ -79,15 +81,15 @@ export const CadastroCarro = () => {
                     onChange={e => setPlaca(e.target.value)}/>
                 </div>
 
-                <span className="conteudo-principal-escrito-subtitulo flex"> Carona para até quantas pessoas?</span>
-
-                <div className="flex">   
-                    <select className="input select-pessoas" name="select">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
+                <div className="flex">
+                <InputMask
+                    placeholder="Vagas disponíveis"
+                    className={placa !== "" ? 'has-val input' : 'input'}
+                    type="text"
+                    maxLength={1}
+                    minLength={1}
+                    value={quantidade}
+                    onChange={e => setQuantidade(e.target.value)}/>
                 </div>
 
                 <div className="flex">    
@@ -103,13 +105,13 @@ export const CadastroCarro = () => {
                                         'Content-Type': 'application/json'
                                     },
                                     body: JSON.stringify({
-                                        cpf: "12345678901",
+                                        cpf: cpf,
                                         cnh: cnh,
                                         brand: marca,
                                         model: modelo,
                                         year: ano,
                                         licensePlate: placa,
-                                        maximumNumberOfPassengers: "4"
+                                        maximumNumberOfPassengers: quantidade
                                     })
                                 });
                                 console.log(resp.status);
