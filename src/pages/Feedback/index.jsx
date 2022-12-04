@@ -46,16 +46,16 @@ export const Feedback = () => {
                         onClick = {
                             async e => {
                                 e.preventDefault();
-                                const resp = await fetch("/signUp/user", {
+                                const resp = await fetch("/feedback", {
                                     method: "POST",
                                     headers: {
                                         'Accept': 'application/json',
                                         'Content-Type': 'application/json'
                                     },
                                     body: JSON.stringify({
-                                        nome: nome,
+                                        name: nome,
                                         email: email,
-                                        feedback: feedback
+                                        message: feedback
                                     })
                                 });
                                 console.log(resp.status);
