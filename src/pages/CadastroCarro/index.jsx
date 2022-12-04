@@ -84,18 +84,20 @@ export const CadastroCarro = () => {
                         onClick = {
                             async e => {
                                 e.preventDefault();
-                                const resp = await fetch("/signUp/user", {
+                                const resp = await fetch("/car", {
                                     method: "POST",
                                     headers: {
                                         'Accept': 'application/json',
                                         'Content-Type': 'application/json'
                                     },
                                     body: JSON.stringify({
+                                        cpf: "12345678901",
                                         cnh: cnh,
-                                        marca: marca,
-                                        modelo: modelo,
-                                        ano: ano,
-                                        placa: placa
+                                        brand: marca,
+                                        model: modelo,
+                                        year: ano,
+                                        licensePlate: placa,
+                                        maximumNumberOfPassengers: "4"
                                     })
                                 });
                                 console.log(resp.status);
