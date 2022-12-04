@@ -36,8 +36,8 @@ export const CadastroCarro = () => {
                     className={cnh !== "" ? 'has-val input' : 'input'}
                     type="text"
                     mask="999999999"
-                    maxLength={11}
-                    minLength={11}
+                    maxLength={13}
+                    minLength={13}
                     value={cpf}
                     onChange={e => setCPF(e.target.value)}/>
                 </div>
