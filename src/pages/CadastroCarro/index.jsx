@@ -5,6 +5,7 @@ import InputMask from 'react-input-mask';
 
 export const CadastroCarro = () => {
     const [cnh, setCNH] = useState("")
+    const [cpf, setCPF] = useState("")
     const [marca, setMarca] = useState("")
     const [modelo, setModelo] = useState("")
     const [ano, setAno] = useState("")
@@ -26,6 +27,17 @@ export const CadastroCarro = () => {
                     minLength={11}
                     value={cnh}
                     onChange={e => setCNH(e.target.value)}/>
+                </div>
+
+                <div className="flex">
+                    <input
+                        placeholder="Informar CPF"
+                        className={cpf !== "" ? 'has-val input' : 'input'}
+                        type="text"
+                        maxLength={11}
+                        minLength={11}
+                        value={cpf}
+                        onChange={e => setCPF(e.target.value)}/>
                 </div>
 
                 <div className="flex">
